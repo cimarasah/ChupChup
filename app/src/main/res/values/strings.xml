@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Chup Chup</string>
+    <string name="debito">Débito</string>
+    <string name="credito">Crédito</string>
+    <string name="clientes">Clientes</string>
+    <string name="configuracoes">Configurações</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>
