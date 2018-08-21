@@ -1,8 +1,9 @@
-package com.cimarasah.chupchup.activity;
+package com.cimarasah.chupchup.Activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.cimarasah.chupchup.Adapter.ViewPagerAdapter;
+import com.cimarasah.chupchup.Fragment.CreditFragment;
+import com.cimarasah.chupchup.Fragment.DebitFragment;
 import com.cimarasah.chupchup.Model.Cliente;
 import com.cimarasah.chupchup.R;
 
@@ -23,7 +27,10 @@ import java.util.ArrayList;
 public class BlackListActivity extends AppCompatActivity {
 
 
-    private ViewPager mViewPager;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
+    private ViewPagerAdapter adapter;
+
     FloatingActionButton fab_add, fab_shopp, fab_client;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     boolean isOpen = false;
@@ -41,9 +48,19 @@ public class BlackListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setFloatingActionButton();
 
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        adapter.AddFragment(new DebitFragment(), "Débito");
+        adapter.AddFragment(new CreditFragment(), "Crédito");
+
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
 
-       ListView mBlackListView = findViewById(R.id.listViewDeb);
+
+     //  ListView mBlackListView = findViewById(R.id.listViewDeb);
 
 
          ArrayList<Cliente> listaClientes;

@@ -1,11 +1,11 @@
-package com.cimarasah.chupchup.business.Impl;
+package com.cimarasah.chupchup.Business.Impl;
 
 import android.content.Context;
 
 import com.cimarasah.chupchup.DAO.ClienteDAO;
 import com.cimarasah.chupchup.Enum.FiltroCliente;
 import com.cimarasah.chupchup.Model.Cliente;
-import com.cimarasah.chupchup.business.Interface.IClienteBusiness;
+import com.cimarasah.chupchup.Business.Interface.IClienteBusiness;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.cimarasah.chupchup.business.Interface;
+package com.cimarasah.chupchup.Business.Interface;
 
 import com.cimarasah.chupchup.Enum.FiltroCliente;
 import com.cimarasah.chupchup.Model.Cliente;
