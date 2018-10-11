@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.cimarasah.chupchup.Enum.FiltroCliente;
 import com.cimarasah.chupchup.Model.Cliente;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class ClienteDAO extends DataBase{
         values.put(COL_NOME,cliente.getNome());
         values.put(COL_EMAIL,cliente.getEmail());
         values.put(COL_TELEFONE,cliente.getTelefone());
-        values.put(COL_SALDO,cliente.getSaldo());
+        values.put(COL_SALDO,String.valueOf(cliente.getSaldo()));
         values.put(COL_DT_CADASTRO, String.valueOf(new Date()));
 
         db.insert(TABELA_CLIENTE, null, values);
@@ -75,7 +76,7 @@ public class ClienteDAO extends DataBase{
         cliente.setNome(cursor.getString(1));
         cliente.setTelefone(cursor.getString(2));
         cliente.setEmail(cursor.getString(3));
-        cliente.setSaldo(Double.parseDouble(cursor.getString(4)));
+        cliente.setSaldo(new BigDecimal(cursor.getString(4)));
         cliente.setDt_cadastro(formato.parse(cursor.getString(3)));
 
         return cliente;
@@ -89,7 +90,7 @@ public class ClienteDAO extends DataBase{
         values.put(COL_NOME,cliente.getNome());
         values.put(COL_TELEFONE,cliente.getTelefone());
         values.put(COL_EMAIL,cliente.getEmail());
-        values.put(COL_SALDO,cliente.getSaldo());
+        values.put(COL_SALDO,String.valueOf(cliente.getSaldo()));
 
         db.update(TABELA_CLIENTE,  values, COL_ID +" = ? ",new String[] {String.valueOf(cliente.getId())} );
         db.close();
@@ -116,7 +117,7 @@ public class ClienteDAO extends DataBase{
                 cliente.setNome(cursor.getString(1));
                 cliente.setTelefone(cursor.getString(2));
                 cliente.setEmail(cursor.getString(3));
-                cliente.setSaldo(Double.parseDouble(cursor.getString(4)));
+                cliente.setSaldo(new BigDecimal(cursor.getString(4)));
                 cliente.setDt_cadastro(formato.parse(cursor.getString(3)));
                 clientes.add(cliente);
             }while (cursor.moveToNext());

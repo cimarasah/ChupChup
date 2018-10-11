@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#673624</color>
-    <color name="colorPrimaryDark">#fc97cf</color>
+    <color name="colorPrimaryDark">#69cbc2</color>
     <color name="colorAccent">#fa49aa</color>
     <color name="primary_dark_material_dark">#530901</color>
-    <color name="primary_material_dark">#ff7ec4</color>
-    <color name="accent_material_dark">#69cbc2</color>
+    <color name="primary_material_dark">#69cbc2</color>
+    <color name="accent_material_dark">#ff7ec4</color>
     <color name="backgroundtablayout">#693b2b</color>
+    <color name="txtDeb">#bf1a1a</color>
+    <color name="txtCred">#23b173</color>
+    <color name="buttomBlue">#679e99</color>
+    <color name="buttomBluePressed">#008276</color>
+    <color name="buttomPink">#e052a0</color>
+    <color name="buttomPinkPressed">#a4005a</color>
+    <color name="buttomBromn">#613d2f</color>
+    <color name="buttomBromnPressed">#4d2617</color>
+    <color name="backButton">#ffffff</color>
+
+
 </resources>

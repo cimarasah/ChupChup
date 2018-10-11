@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DataBase extends SQLiteOpenHelper{
 
     private static final int VERSAO_BANCO = 1;
-    private static final String BANCO = "bd_listaNegra";
+    private static final String BANCO = "CHUPCHUP";
     private static final String TABELA_CLIENTE = "TB_CLIENTE";
     private static final String COL_CODIGO = "CODIGO";
     private static final String COL_NOME = "NOME";

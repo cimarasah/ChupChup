@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    tools:context="com.cimarasah.chupchup.Activity.ClientActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundtablayout"
+        android:minHeight="@dimen/height_item_recycler"
+        android:theme="@style/AppTheme.NoActionBar"
+        app:title="@string/cliente"
+        app:titleTextColor="@android:color/white">
+
+        <ImageButton
+            android:id="@+id/id_add_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:paddingLeft="260dp"
+            android:src="@drawable/ic_add_write_24dp" />
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:id="@+id/linear_layout_btn_client">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/client_recyclerview"
+            tools:listitem="@layout/item_client_recycler_view">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

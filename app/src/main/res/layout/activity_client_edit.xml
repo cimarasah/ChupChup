@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.cimarasah.chupchup.Activity.ClientActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundtablayout"
+        android:minHeight="@dimen/toolbar"
+        android:theme="@style/AppTheme.NoActionBar"
+        app:titleTextColor="@android:color/white"
+        app:title="@string/cliente"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/client_imput_name"
+            android:layout_marginTop="10dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/client_name"
+                android:ems="10"
+                android:hint="Nome"/>
+
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_phone"
+            android:layout_marginTop="10dp">
+
+
+            <com.santalu.widget.MaskEditText
+                android:id="@+id/client_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/telefone"
+                android:inputType="phone"
+                app:met_mask="(##) #####-####"/>
+
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/client_imput_email"
+            android:layout_marginTop="10dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/client_email"
+                android:ems="10"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"/>
+
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/client_imput_value"
+            android:layout_marginTop="10dp">
+
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancelClient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginTop="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button_bromn"
+                android:text="@string/cancelar"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnCleanClient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginTop="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button_blue"
+                android:text="@string/limpar"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnSaveClient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginTop="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button_pink"
+                android:text="@string/salvar"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">Chup Chup</string>
+    <string name="telefone">Telefone</string>
+    <string name="saldo">Saldo</string>
+    <string name="diario">Diário</string>
     <string name="debito">Débito</string>
     <string name="credito">Crédito</string>
     <string name="clientes">Clientes</string>
+    <string name="cliente">Cliente</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="limpar">Limpar</string>
+    <string name="salvar">Salvar</string>
     <string name="configuracoes">Configurações</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_client_edit">ClientEditActivity</string>
 </resources>

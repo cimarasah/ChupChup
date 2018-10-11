@@ -1,9 +1,9 @@
 package com.cimarasah.chupchup.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,45 +13,47 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.cimarasah.chupchup.Adapter.ViewPagerAdapter;
+import com.cimarasah.chupchup.Adapter.HomeViewPagerAdapter;
 import com.cimarasah.chupchup.Fragment.CreditFragment;
+import com.cimarasah.chupchup.Fragment.DailyFregment;
 import com.cimarasah.chupchup.Fragment.DebitFragment;
 import com.cimarasah.chupchup.Model.Cliente;
 import com.cimarasah.chupchup.R;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class BlackListActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private ViewPagerAdapter adapter;
+    private HomeViewPagerAdapter adapter;
 
     FloatingActionButton fab_add, fab_shopp, fab_client;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     boolean isOpen = false;
-    private static final String TAG = "BlackListActivity";
+    private static final String TAG = "HomeActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_black_list);
+        setContentView(R.layout.activity_home);
 
         Log.d(TAG,"OnCreate: Started");
 
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
         setFloatingActionButton();
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        tabLayout = findViewById(R.id.tabs);
+        viewPager = findViewById(R.id.viewpager);
+        adapter = new HomeViewPagerAdapter(getSupportFragmentManager());
 
+        adapter.AddFragment(new DailyFregment(), "Diário");
         adapter.AddFragment(new DebitFragment(), "Débito");
         adapter.AddFragment(new CreditFragment(), "Crédito");
 
@@ -76,11 +78,11 @@ public class BlackListActivity extends AppCompatActivity {
         Cliente cli = new Cliente();
         cli.setId(1);
         cli.setNome("Cimara");
-        cli.setSaldo(Double.parseDouble("12.00"));
+        cli.setSaldo(BigDecimal.valueOf(12.00));
         Cliente cli2 = new Cliente();
         cli2.setId(1);
         cli2.setNome("Carla");
-        cli2.setSaldo(Double.parseDouble("24.00"));
+        cli2.setSaldo(BigDecimal.valueOf(24.00));
         list.add(cli);
         list.add(cli2);
 
@@ -109,14 +111,15 @@ public class BlackListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 animateFab();
-                Toast.makeText(BlackListActivity.this, "Inserir Fiado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, "Inserir Fiado", Toast.LENGTH_SHORT).show();
             }
         });
         fab_client.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 animateFab();
-                Toast.makeText(BlackListActivity.this, "Inserir Cliente", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HomeActivity.this, ClientActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.cimarasah.chupchup.Model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -12,13 +13,24 @@ public class Cliente {
     String nome;
     String telefone;
     String email;
-    double saldo;
+    BigDecimal saldo;
+    boolean taDevendo;
+
+
+
     Date dt_cadastro;
 
 
     public Cliente (){}
 
-    public Cliente (String nome, double saldo){
+    public Cliente(int id, String nome, BigDecimal saldo, boolean taDevendo) {
+        this.id = id;
+        this.nome = nome;
+        this.saldo = saldo;
+        this.dt_cadastro = new Date();
+    }
+
+    public Cliente (String nome, BigDecimal saldo){
         this.nome = nome;
         this.saldo = saldo;
     }
@@ -56,11 +68,12 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
-    public double getSaldo() {
+
+    public BigDecimal getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
+    public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
     }
 
@@ -71,5 +84,17 @@ public class Cliente {
     public void setDt_cadastro(Date dt_cadastro) {
         this.dt_cadastro = dt_cadastro;
     }
+
+    public boolean isTaDevendo() {
+
+        if(BigDecimal.valueOf(0).compareTo(this.saldo)==1){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+
 
 }
